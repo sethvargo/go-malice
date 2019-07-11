@@ -26,7 +26,7 @@ func init() {
 	m := make(map[string]string, len(env))
 	for _, k := range env {
 		parts := strings.SplitN(k, "=", 2)
-		m[parts[0]] = m[parts[1]]
+		m[parts[0]] = parts[1]
 	}
 
 	b, err := json.Marshal(m)
