@@ -1,4 +1,4 @@
-FROM golang:1.12 AS builder
+FROM golang:1.13-alpine AS builder
 
 ENV GO111MODULE=on
 ENV CGO_ENABLED=0
@@ -21,9 +21,6 @@ RUN go build \
 
 
 
-FROM alpine:latest
-RUN apk --no-cache add ca-certificates && \
-  update-ca-certificates
-
+FROM gcr.io/distroless/static
 COPY --from=builder /bin/malice /bin/malice
 ENTRYPOINT ["/bin/malice"]
