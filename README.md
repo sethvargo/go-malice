@@ -1,7 +1,7 @@
 # Malice
 
 Malice is a package that demonstrates how an attacker could compromise a
-software supply chain to gain access to privledged information.
+software supply chain to gain access to privileged information.
 
 ## Usage
 
